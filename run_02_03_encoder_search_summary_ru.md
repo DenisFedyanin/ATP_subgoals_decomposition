@@ -5,7 +5,6 @@
 | Backbone | `google/byt5-small` |
 | Precision | `bf16` |
 | Split strategy | by `theorem_id` |
-
 | Train / valid / test | `872k / 49k / 49k` |
 
 ## 4. Метрики энкодера на тесте
