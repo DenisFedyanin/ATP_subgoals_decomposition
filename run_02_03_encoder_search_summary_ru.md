@@ -1,6 +1,6 @@
 # Результаты по `run_02_train_encoder.py` и `run_03_eval_search_f.py`
 
-| Поле | Значение |
+| |  |
 |---|---|
 | Backbone | `google/byt5-small` |
 | Precision | `bf16` |
