@@ -44,7 +44,7 @@
 
 Два режима поиска:
  `vanilla_generator_rank` - тактики исполняются в порядке, предложенном генератором 
- `encoder_rerank_gentle_prune` - энкодер переупорядочивает и мягко отсекает candidate tactics |
+ `encoder_rerank_gentle_prune` - энкодер переупорядочивает и мягко отсекает кандидатные тактики 
 
 Eval проводился на одной и той же held-out выборке из `500` теорем:
 `300` задач из Lean Workbook held-out и `200` задач из Mathlib held-out; 
