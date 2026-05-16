@@ -208,7 +208,7 @@ theorem lean_workbook_plus_140 (x y : ℝ) :
   ]
 ```
 
-#### 3. Regular monte-carlo rollouts for linear failed trajectories
+#### 3. Regular monte-carlo rollouts for linear failed trajectories with adaptive sampling (16 first attempt --> 32 second go)
 
 
 
