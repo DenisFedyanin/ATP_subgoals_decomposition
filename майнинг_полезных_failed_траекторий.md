@@ -6,11 +6,10 @@
 | MCSP candidate, structured | `32%` | proof has `have`, `calc`, `show`, `constructor`, `cases`, `induction`, nested `by`,  |
 | Has compilable sorry skeleton | `16%` | Lean-compiled `sorry` skeleton. |
 | Solved MCSP holes later | `4%` | Hole search finds a verified replacement. |
-| Has valid prefix + sorry | `52%` | A linear/flat attempt has at least one prefix that compiles with appended `sorry`. |
-| Prefix rollout has useful signal | `24%` | Adaptive suffix rollouts show solves or strong partial progress. |
-| Solved prefix suffix later | `9%` | Prefix continuation search finds a verified suffix. |
-| No useful skeleton/prefix | `36%` | Failed attempt produces neither valid MCSP skeleton nor valid prefix job. |
-|
+| Has valid prefix + sorry | `52%` | A linear/flat proof |
+| Prefix rollout has useful signal | `24%` | suffix rollouts ratio 1/16 |
+| Solved prefix suffix later | `9%` | Prefix found with search |
+| No useful skeleton/prefix | `36%` | neither valid MCSP skeleton nor valid prefix job |
 
 
 
