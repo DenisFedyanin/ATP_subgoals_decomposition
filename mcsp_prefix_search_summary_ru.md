@@ -4,10 +4,10 @@
 
 | Метрика | Результат |
 |---|---:|
-| Всего search jobs | `10,000` |
-| MCSP hole jobs | `3,500` |
-| Prefix completion jobs | `6,500` |
-| Всего решено | `1,450` |
+| Всего search jobs | `8,321` |
+| MCSP hole jobs | `3,195` |
+| Prefix completion jobs | `5216` |
+| Всего решено | `1,206` |
 | Общий solve rate | `14.5%` |
 | MCSP solve rate | `11.6%` |
 | Prefix solve rate | `17.4%` |
