@@ -183,8 +183,6 @@ nlinarith [hxy]
 The fact `hxy` is useful, but it is not enough for `nlinarith`.
 The proof needs additional nonnegativity facts.
 
-Extracted prefix
-
 we check whether the prefix + `sorry` compiles.
 
 Prefix candidate:
