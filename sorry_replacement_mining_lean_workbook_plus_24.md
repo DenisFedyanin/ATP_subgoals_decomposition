@@ -1,7 +1,7 @@
 
 ### Майнинг полезных провальных траекторий
 
-#### Run 04 MCSP / Sorry-Skeleton:
+#### 1. Run 04 MCSP / Sorry-Skeleton:
 
 Source script: `run_04_mine_failed_problems.py`  
 Dataset: `internlm/Lean-Workbook`,  [internlm/Lean-Workbook](https://huggingface.co/datasets/internlm/Lean-Workbook)
@@ -164,7 +164,7 @@ theorem lean_workbook_plus_289 (a b c : ℝ) :
 ```
 
 
-# Run 04 Prefix Fallback / Adaptive Rollouts Example
+#### 2.  Prefix fallback with adaptive rollouts:
  
 Dataset source: `internlm/Lean-Workbook`  
 Example theorem: `lean_workbook_plus_140`
@@ -294,7 +294,7 @@ theorem lean_workbook_plus_140 (x y : ℝ) :
   ]
 ```
 
-
+#### 3. Regular monte-carlo rollouts for linear failed trajectories
 
 
 
