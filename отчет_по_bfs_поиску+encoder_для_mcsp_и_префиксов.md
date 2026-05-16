@@ -65,7 +65,7 @@ Search budget
 
 Budget curve
 
-| Tactic-call budget | MCSP holes | Prefix jobs | Overall |bu |
+| Tactic-call budget | MCSP holes | Prefix jobs | Overall |
 |---|---:|---:|---:|
 | `128` | `3.0%` | `6.5%` | `5.3%` |
 | `256` | `4.8%` | `9.4%` | `7.8%` |
