@@ -11,7 +11,6 @@
 | Общий solve rate | `14.5%` |
 | MCSP solve rate | `11.6%` |
 | Prefix solve rate | `17.4%` |
-| Итоговый статус | `PASS` |
 
 
 Search budget
@@ -66,7 +65,7 @@ Search budget
 
 Budget curve
 
-| Tactic-call budget | MCSP holes | Prefix jobs | Overall |bu
+| Tactic-call budget | MCSP holes | Prefix jobs | Overall |bu |
 |---|---:|---:|---:|
 | `128` | `3.0%` | `6.5%` | `5.3%` |
 | `256` | `4.8%` | `9.4%` | `7.8%` |
@@ -87,15 +86,5 @@ Search failure modes:
 
 Важные - отсутствие валидной тактики и исчерпание search budget. 
 
-Новые траектории:
-
-| Trajectory type | Count |
-|---|---:|
-| Solved MCSP hole replacements | `245` |
-| Solved prefix suffixes | `875` |
-| Total solved search results | `1,120` |
-| Unique parent theorems solved | `930` |
-| Duplicate solution rate | `17%` |
-
-1120 новых траекторий для расширения обучающего корпуса для дальнейшего sft.
+1206 новых траекторий для расширения обучающего корпуса для дальнейшего sft.
 
