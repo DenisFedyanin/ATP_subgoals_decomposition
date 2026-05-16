@@ -183,9 +183,7 @@ nlinarith [hxy]
 The fact `hxy` is useful, but it is not enough for `nlinarith`.
 The proof needs additional nonnegativity facts.
 
-we check whether the prefix + `sorry` compiles.
-
-Prefix candidate:
+we check whether the prefix + `sorry` compiles with prefix:
 ```lean
 have hxy : 0 ≤ (x - y) ^ 2 := sq_nonneg (x - y)
 ```
@@ -195,77 +193,6 @@ theorem lean_workbook_plus_140 (x y : ℝ) :
     x ^ 2 + x + y ^ 2 + y + 1 ≥ x * y := by
   have hxy : 0 ≤ (x - y) ^ 2 := sq_nonneg (x - y)
   sorry
-```
-
-
-Probe stage results
-
-| Metric | Value |
-|---|---:|
-| Rollouts sampled | `16` |
-| Solved suffixes | `0` |
-| Solved ratio | `0.0%` |
-| Valid partial suffixes | `7` |
-| Valid partial rate | `43.8%` |
-| Max valid suffix steps | `4` |
-| Decision | `ESCALATE_TO_MAIN` |
-
-Example partial suffix:
-
-```lean
-have hx : 0 ≤ (x + 1) ^ 2 := sq_nonneg (x + 1)
-have hy : 0 ≤ (y + 1) ^ 2 := sq_nonneg (y + 1)
-nlinarith [hxy, hx]
-```
-No full solution, many suffixes compile for several steps. This is a promising frontier signal.
-
-Main stage results
-
-| Metric | Value |
-|---|---:|
-| Total rollouts sampled | `32` |
-| Solved suffixes | `1` |
-| Solved ratio | `3.1%` |
-| Wilson lower bound | `0.55%` |
-| Valid partial suffixes | `17` |
-| Valid partial rate | `53.1%` |
-| Max valid suffix steps | `6` |
-| Decision | `ESCALATE_TO_CONFIRM` |
-
-First solved suffix:
-
-```lean
-nlinarith [
-  hxy,
-  sq_nonneg (x + 1),
-  sq_nonneg (y + 1)
-]
-```
-
-## 9. Confirm Stage Results
-
-| Metric | Value |
-|---|---:|
-| Total rollouts sampled | `64` |
-| Solved suffixes | `4` |
-| Solved ratio | `6.25%` |
-| Wilson lower bound | `2.46%` |
-| Valid partial suffixes | `35` |
-| Valid partial rate | `54.7%` |
-| Unique solved suffixes | `3` |
-| Duplicate rate | `22%` |
-| Shortest solved suffix length | `3 lines` |
-| Quality class | `high` |
-| Quality score | `1.16` |
-
-Best verified suffix
-
-```lean
-nlinarith [
-  hxy,
-  sq_nonneg (x + 1),
-  sq_nonneg (y + 1)
-]
 ```
 
 Assembled final proof:
