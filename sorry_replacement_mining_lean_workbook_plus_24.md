@@ -202,20 +202,6 @@ theorem lean_workbook_plus_289 (a b c : ℝ) :
 
 The third `nlinarith` call does not have enough relevant polynomial facts to prove `h3`.
 
-
-The proof is not a flat one-line proof. It contains meaningful structure:
-
-| Feature | Present |
-|---|---:|
-| Multiple `have ... := by` blocks | yes |
-| Nonlinear arithmetic tactics | yes |
-| Reusable intermediate claims | yes |
-| Final assembly with `exact ⟨h1, h2, h3⟩` | yes |
-| Localized failure | yes |
-
-Only one local part is broken. The rest of the proof skeleton is useful.
-The problematic block is inside 3 intermediate lemma.
-
 Original failed line:
 
 ```lean
