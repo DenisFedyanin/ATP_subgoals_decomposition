@@ -21,12 +21,12 @@ Search budget
 | Max nodes per job | `512` |
 | Max depth | `16` |
 | Candidates generated per node | `16` |
-| Candidates executed after encoder+k-DPP | `4` |
+| Candidates executed after encoder+k-DPP | `16` |
 | Max Lean tactic calls per job | `1024` |
-| Tactic timeout | `5 sec` |
+| Tactic timeout | `15 sec` |
 | Wall time per job | `120 sec` |
 
-Encoder+k-DPP исполняет только `4` тактики из `16` сгенерированных на каждом узле, то есть снижает число Lean-вызовов и пытается сохранить наиболее полезные и разнообразные candidates.
+
 
 Качество encoder+k-DPP отбора
 
