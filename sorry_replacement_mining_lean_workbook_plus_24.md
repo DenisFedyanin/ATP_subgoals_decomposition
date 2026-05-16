@@ -168,7 +168,7 @@ theorem lean_workbook_plus_289 (a b c : ℝ) :
     b^4 * c^2 + c^4 * a^2 ≥ 2 * c^3 * b^2 * a := by
   sorry
 ```
-proof naturally decomposes into three nonlinear inequality subgoals.
+proof decomposes into three nonlinear inequality subgoals.
 
 ###### Failed whole-proof generated seq:
 
