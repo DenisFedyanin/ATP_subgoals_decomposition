@@ -1,6 +1,6 @@
 # Отчёт по поиску MCSP holes и prefix completion
 
-из 10000 search jobs было решено 1120 ,  общий solve rate = 11.2%. Prefix completion оказался проще и дал более высокий solve rate, чем MCSP hole replacement.
+из 10000 search jobs было решено 1206 ,  общий solve rate = 14.5%. Prefix completion оказался проще и дал более высокий solve rate, чем MCSP hole replacement.
 
 | Метрика | Результат |
 |---|---:|
