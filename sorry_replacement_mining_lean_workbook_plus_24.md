@@ -12,13 +12,6 @@ For positive real numbers a, b, c, prove
 ```
 
 ```lean
-import Mathlib
-import Aesop
-
-set_option maxHeartbeats 0
-
-open BigOperators Real Nat Topology Rat
-
 theorem lean_workbook_plus_24
     (a b c : ℝ)
     (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) :
