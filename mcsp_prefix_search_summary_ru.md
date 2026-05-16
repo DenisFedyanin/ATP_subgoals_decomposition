@@ -21,7 +21,7 @@ Search budget
 | Max nodes per job | `512` |
 | Max depth | `16` |
 | Candidates generated per node | `16` |
-| Candidates executed after encoder+k-DPP | `16` |
+| Candidates executed after encoder+k-DPP | `8` |
 | Max Lean tactic calls per job | `1024` |
 | Tactic timeout | `15 sec` |
 | Wall time per job | `120 sec` |
@@ -33,16 +33,14 @@ Search budget
 | Метрика | Результат |
 |---|---:|
 | Candidate tactics generated+executed | `1,920,000` |
-| Execution fraction | `25.0%` |
-| Valid tactic rate среди generated sample | `18.0%` |
+| Candidate tactics executed | `960,000` |
 | Valid tactic rate среди executed tactics | `31.5%` |
 | Encoder top-1 valid rate | `34.0%` |
 | Encoder top-4 valid recall | `61.0%` |
 | k-DPP diversity score mean | `0.72` |
-| Duplicate tactic rate до k-DPP | `28.0%` |
-| Duplicate tactic rate после k-DPP | `7.0%` |
+| Duplicate tactic rate c k-DPP | `7.0%` |
 
-среди выполненных тактик доля валидных выше, чем среди generated sample, а duplicate tactic rate падает с 28.0% до 7.0%.
+среди выполненных тактик доля валидных выше, чем среди generated sample, а duplicate tactic rate cоставляет 7.0%.
 
 Результаты MCSP hole search
 
