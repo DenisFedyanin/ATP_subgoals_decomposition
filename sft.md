@@ -1,11 +1,6 @@
-# Run 07 LoRA SFT Report
 
-Script: `run_07_sft.py`  
 Base model: `deepseek-ai/DeepSeek-Prover-V1.5-SFT`  
-Output dir: `outputs/run_07_sft_lora`  
 Training type: completion-only LoRA SFT
-
-## 1. Executive Summary
 
 | Metric | Result |
 |---|---:|
