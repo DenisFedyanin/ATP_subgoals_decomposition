@@ -16,8 +16,7 @@ but
 proof with one local sorry compiles
 ```
 failed proof still contains a usable proof skeleton.
-
-###### Generated example: 
+ 
 ```text
 Inequality follows from these three AM-GM inequalities:
 
