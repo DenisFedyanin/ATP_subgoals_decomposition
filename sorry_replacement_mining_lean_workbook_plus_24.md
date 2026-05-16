@@ -117,35 +117,6 @@ a b c : ℝ
 h1 : a^4 * b^2 + b^4 * c^2 ≥ 2 * b^3 * a^2 * c
 h2 : a^4 * b^2 + c^4 * a^2 ≥ 2 * a^3 * c^2 * b
 ```
-
-The corresponding `mcsp_holes.jsonl` item:
-
-```json
-{
-  "parent_theorem_id": "lean_workbook_plus_289",
-  "attempt_id": "attempt_013",
-  "hole_kind": "line",
-  "proof_style_label": "MCSP_CANDIDATE",
-  "status": "UNRESOLVED_NO_GENERATOR",
-  "semi_proof_verification": {
-    "ok": true,
-    "has_sorry_warning": true
-  },
-  "original_block": "    nlinarith [sq_nonneg (a + b + c)]",
-  "semi_proof_body": "... have h3 ... := by\n    sorry\n\n  exact ⟨h1, h2, h3⟩"
-}
-```
-
-If a hole-search generator is enabled later, this same job may become:
-
-```json
-{
-  "status": "SOLVED",
-  "best_solution": "nlinarith [sq_nonneg (b^2 - a*c), sq_nonneg (c^2 - b*a), sq_nonneg (a^2 - c*b)]"
-}
-```
-
-
 Found with BFS+encoder proof for the `sorry`:
 
 ```lean
