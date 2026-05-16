@@ -2,10 +2,8 @@
 ##### Run 04 MCSP / Sorry-Skeleton:
 
 Source script: `run_04_mine_failed_problems.py`  
-Example type: MCSP hole extraction  
-Dataset source: `internlm/Lean-Workbook`  
+Dataset: `internlm/Lean-Workbook`  
 Example theorem: `lean_workbook_plus_289`
-
 
 `run_04` receives a whole-proof attempt. If the full proof does not compile, it checks whether the proof has useful nonlinear / structured proof shape.
 For structured attempts, it tries to create semi-proofs by replacing suspicious proof lines or blocks with `sorry`.
