@@ -4,7 +4,6 @@ Training type: completion-only LoRA SFT
 
 | Metric | Result |
 |---|---:|
-| Training status | `PASS` |
 | Base model | `DeepSeek-Prover-V1.5-SFT` |
 | LoRA rank | `16` |
 | Max sequence length | `4096` |
