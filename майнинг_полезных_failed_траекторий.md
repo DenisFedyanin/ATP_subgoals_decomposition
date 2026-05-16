@@ -7,11 +7,9 @@ Source script: `run_04_mine_failed_problems.py`
 Dataset: `internlm/Lean-Workbook`,  [internlm/Lean-Workbook](https://huggingface.co/datasets/internlm/Lean-Workbook)
 Example theorem: `lean_workbook_plus_289`
 
-`run_04` receives a whole-proof attempt. If the full proof does not compile, it checks whether the proof has useful nonlinear / structured proof shape.
-For structured attempts, it tries to create semi-proofs by replacing suspicious proof lines or blocks with `sorry`.
-
-A useful MCSP job is created only when:
-
+if full proof does not compile we check if the proof has useful nonlinear/ structured proof shape.
+For structured attempts we try to create semi-proofs by replacing tagged proof lines/blocks with `sorry`.
+Useful MCSP job is created only when:
 ```text
 full proof fails
 but
