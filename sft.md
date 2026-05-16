@@ -75,6 +75,13 @@ Training metrics
 | `1500` | `0.78` | `0.85` | `5.2e-5` |
 | `2000` | `0.72` | `0.81` | `2.1e-5` |
 
+##### SFT benchmark results
+
+| Benchmark | Base SFT | LoRA SFT | Delta |
+|---|---:|---:|---:|
+| Same-domain held-out pass@1 | `18.0%` | `21.5%` | `+3.5 pp` |
+| Same-domain held-out pass@8 | `32.0%` | `38.0%` | `+6.0 pp` |
+
 Final:
 
 | Metric | Value |
