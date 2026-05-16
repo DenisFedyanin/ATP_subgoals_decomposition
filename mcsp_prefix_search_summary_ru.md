@@ -13,18 +13,6 @@
 | Prefix solve rate | `13.5%` |
 | Итоговый статус | `PASS` |
 
-Качество входных jobs
-
-| Метрика | MCSP holes | Prefix jobs |
-|---|---:|---:|
-| Jobs loaded | `3,500` | `6,500` |
-| Malformed jobs | `45` | `70` |
-| Jobs with valid Lean context | `3,410` | `6,340` |
-| Context validation rate | `97.4%` | `97.5%` |
-| Median initial goal length | `820 chars` | `1,150 chars` |
-| Median prefix length | `-` | `4 lines` |
-| Median skeleton length | `13 lines` | `-` |
-
 
 Search budget
 
