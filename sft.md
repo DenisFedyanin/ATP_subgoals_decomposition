@@ -21,20 +21,10 @@ Dataset composition
 |---|---:|---:|
 | `mcsp_assembled` | `3,900` | `15.5%` |
 | `prefix_suffix` | `6,700` | `26.6%` |
-| `full_solved_direct` | `2,370` | `9.4%` |
 | `general_lean` | `12,200` | `48.5%` |
-| Total deduped examples | `25,170` | `100%` |
 
-Key checks:
 
-| Check | Result |
-|---|---:|
-| Duplicate theorem/proof pairs removed | `2,430` |
-| Max variants per theorem | `4` |
-| Split by theorem id | yes |
-| Train/val/test theorem overlap | `0` |
-
-## 4. Materialized Mixture
+Materialized mixture
 
 Because examples have weights, train examples may be repeated.
 
@@ -61,16 +51,8 @@ Tokenization skips:
 | Val | `14` | `0` |
 | Test | `16` | `0` |
 
-Healthy targets:
 
-| Metric | Target |
-|---|---:|
-| Overlength skipped | `< 5%` |
-| `sorry/admit` examples | `0` after filtering |
-| Train/val/test theorem overlap | `0` |
-| General Lean share | `30-60%` |
-
-## 5. Training Configuration
+Training configs:
 
 | Field | Value |
 |---|---|
@@ -91,7 +73,7 @@ Healthy targets:
 | Completion-only loss | yes |
 | Max sequence length | `4096` |
 
-## 6. Training Metrics
+Training metrics
 
 | Step | Train Loss | Eval Loss | Learning Rate |
 |---:|---:|---:|---:|
@@ -108,12 +90,3 @@ Final:
 | Best eval loss | `0.81` |
 | Best eval step | `2000` |
 | Loss gap, eval - train | `0.09` |
-| Training completed | yes |
-
-Healthy interpretation:
-
-```text
-Train loss should decrease.
-Eval loss should decrease or plateau.
-A small train/eval gap is acceptable.
-A rising eval loss with falling train loss suggests overfitting.
