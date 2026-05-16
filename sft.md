@@ -57,21 +57,15 @@ Training configs:
 | Field | Value |
 |---|---|
 | Base model | `deepseek-ai/DeepSeek-Prover-V1.5-SFT` |
-| LoRA enabled | yes |
-| QLoRA | no |
 | LoRA rank | `16` |
 | LoRA alpha | `32` |
 | LoRA dropout | `0.05` |
-| Target modules | `q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj` |
 | Precision | `bf16` |
 | Epochs | `2` |
 | Learning rate | `1e-4` |
 | Scheduler | `cosine` |
 | Warmup ratio | `0.03` |
-| Per-device batch size | `1` |
-| Gradient accumulation | `16` |
-| Completion-only loss | yes |
-| Max sequence length | `4096` |
+
 
 Training metrics
 
