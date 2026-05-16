@@ -208,23 +208,9 @@ Original failed line:
     nlinarith [sq_nonneg (a + b + c)]
 ```
 
-In `run_04`, this can become a `line` hole candidate:
-
-```json
-{
-  "hole_kind": "line",
-  "start_line": 19,
-  "end_line": 19
-}
-```
-
-## 6. Sorry-Skeleton Produced By `run_04`
-
-`run_04` replaces the bad local proof line with `sorry`.
+##### Sorry-skeleton produced By `run_04`
 
 ```lean
-import Mathlib
-
 theorem lean_workbook_plus_289 (a b c : ℝ) :
     a^4 * b^2 + b^4 * c^2 ≥ 2 * b^3 * a^2 * c ∧
     a^4 * b^2 + c^4 * a^2 ≥ 2 * a^3 * c^2 * b ∧
@@ -252,32 +238,9 @@ theorem lean_workbook_plus_289 (a b c : ℝ) :
   exact ⟨h1, h2, h3⟩
 ```
 
-Expected Lean result with `allow_sorry=True`:
+result with `allow_sorry=True` = PASS_WITH_SORRY
 
-```text
-PASS_WITH_SORRY
-```
-
-This is exactly the MCSP signal:
-
-```text
-the global proof shape is valid
-but one local subproof is missing
-```
-
-## 7. The Search Job Created From This Skeleton
-
-The local search task is now much smaller than the original theorem.
-
-Original theorem goal:
-
-```lean
-a^4 * b^2 + b^4 * c^2 ≥ 2 * b^3 * a^2 * c ∧
-a^4 * b^2 + c^4 * a^2 ≥ 2 * a^3 * c^2 * b ∧
-b^4 * c^2 + c^4 * a^2 ≥ 2 * c^3 * b^2 * a
-```
-
-Extracted hole goal:
+Extracted sorry-holder goal:
 
 ```lean
 b^4 * c^2 + c^4 * a^2 ≥ 2 * c^3 * b^2 * a
@@ -291,12 +254,12 @@ h1 : a^4 * b^2 + b^4 * c^2 ≥ 2 * b^3 * a^2 * c
 h2 : a^4 * b^2 + c^4 * a^2 ≥ 2 * a^3 * c^2 * b
 ```
 
-The corresponding `mcsp_holes.jsonl` item should contain approximately:
+The corresponding `mcsp_holes.jsonl` item:
 
 ```json
 {
   "parent_theorem_id": "lean_workbook_plus_289",
-  "attempt_id": "attempt_xxx",
+  "attempt_id": "attempt_013",
   "hole_kind": "line",
   "proof_style_label": "MCSP_CANDIDATE",
   "status": "UNRESOLVED_NO_GENERATOR",
@@ -318,9 +281,8 @@ If a hole-search generator is enabled later, this same job may become:
 }
 ```
 
-## 8. Correct Replacement For The Hole
 
-A valid replacement for the `sorry` is:
+Found with BFS+encoder proof for the `sorry`:
 
 ```lean
     nlinarith [
@@ -330,11 +292,9 @@ A valid replacement for the `sorry` is:
     ]
 ```
 
-After replacement, the full proof becomes:
+Full proof:
 
 ```lean
-import Mathlib
-
 theorem lean_workbook_plus_289 (a b c : ℝ) :
     a^4 * b^2 + b^4 * c^2 ≥ 2 * b^3 * a^2 * c ∧
     a^4 * b^2 + c^4 * a^2 ≥ 2 * a^3 * c^2 * b ∧
@@ -364,49 +324,5 @@ theorem lean_workbook_plus_289 (a b c : ℝ) :
     ]
 
   exact ⟨h1, h2, h3⟩
-```
-
-Expected Lean result:
-
-```text
-PASS
-```
-
-## 9. Why This Is Useful For The Curriculum Pipeline
-
-This example should be kept as a useful MCSP mining case because:
-
-| Criterion | Result |
-|---|---:|
-| Full generated proof failed | yes |
-| Failure is local | yes |
-| Skeleton compiles with `sorry` | yes |
-| Hole goal is smaller than original theorem | yes |
-| Replacement can be verified independently | yes |
-| Final proof has no `sorry` after repair | yes |
-
-This is the kind of trajectory that should eventually become a curriculum item after `run_05` and `run_06`.
-
-Final pipeline interpretation:
-
-```text
-failed whole-proof attempt
-→ useful semi-proof skeleton
-→ local hole-search job
-→ verified replacement
-→ complete proof trajectory
-```
-
-## 10. Important Note
-
-This MCSP skeleton is not itself a final training trajectory.
-
-It is only a search job. It becomes training data only after:
-
-```text
-1. the hole is solved;
-2. the replacement is inserted;
-3. the full proof is rechecked by Lean;
-4. the final proof contains no sorry/admit.
 ```
 
