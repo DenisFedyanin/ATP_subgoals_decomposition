@@ -18,15 +18,6 @@ proof with one local sorry compiles
 failed proof still contains a usable proof skeleton.
 
 Example theorem: `lean_workbook_plus_289`: 
-
-```text
-Inequality follows from these three AM-GM inequalities:
-
-a^4 b^2 + b^4 c^2 ≥ 2 b^3 a^2 c
-a^4 b^2 + c^4 a^2 ≥ 2 a^3 c^2 b
-b^4 c^2 + c^4 a^2 ≥ 2 c^3 b^2 a
-```
-
 ```lean
 theorem lean_workbook_plus_289 (a b c : ℝ) :
     a^4 * b^2 + b^4 * c^2 ≥ 2 * b^3 * a^2 * c ∧
