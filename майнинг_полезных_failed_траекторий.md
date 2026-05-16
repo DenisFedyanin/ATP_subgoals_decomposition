@@ -157,7 +157,6 @@ theorem lean_workbook_plus_289 (a b c : ℝ) :
 
 #### 2.  Prefix fallback with adaptive rollouts:
  
-Dataset source: `internlm/Lean-Workbook`  
 Example theorem: `lean_workbook_plus_140`
 
 when failed proof is mostly linear, does not contain a nested structure suitable for MCSP.
