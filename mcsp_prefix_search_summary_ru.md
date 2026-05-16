@@ -32,8 +32,7 @@ Search budget
 
 | Метрика | Результат |
 |---|---:|
-| Candidate tactics generated | `1,920,000` |
-| Candidate tactics executed | `480,000` |
+| Candidate tactics generated+executed | `1,920,000` |
 | Execution fraction | `25.0%` |
 | Valid tactic rate среди generated sample | `18.0%` |
 | Valid tactic rate среди executed tactics | `31.5%` |
