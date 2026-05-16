@@ -13,7 +13,7 @@ norm_num
 ```
 
 
-## Proof states
+### proof states
 
 ```lean
 x : ℕ
@@ -32,7 +32,7 @@ no goals
 ```
 
 ---
-Все tuples ниже принадлежат одной sibling-группе:
+Все кортежи ниже принадлежат одной sibling-группе:
 
 ```json
 {
@@ -271,7 +271,7 @@ no goals
 
 ---
 
-## 5. Полные tuples для состояния `s1`
+##№ полные кортежи для состояния `s1`
 
 proof prefix =  `rw [hx]`
 
