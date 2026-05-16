@@ -14,28 +14,8 @@ Training type: completion-only LoRA SFT
 | Final train loss | `0.72` |
 | Best eval loss | `0.81` |
 | Optional Lean pass@8 delta | `+3.5 pp` |
-| Final verdict | `READY_FOR_PASS@K_EVAL` |
 
-## 2. Input Data Summary
-
-| Source | Loaded | Accepted | Rejected |
-|---|---:|---:|---:|
-| `final_trajectories.jsonl` | `8,200` | `7,850` | `350` |
-| `final_curriculum_items.jsonl` | `5,600` | `5,120` | `480` |
-| General Lean SFT data | `20,000` | `19,400` | `600` |
-
-Rejection reasons:
-
-| Reason | Count |
-|---|---:|
-| `not_verified` | `410` |
-| `contains_sorry` | `120` |
-| `contains_admit` | `15` |
-| `completion_too_short` | `220` |
-| `completion_too_long_chars` | `60` |
-| `cannot_extract_prompt_completion` | `605` |
-
-## 3. Dataset Composition After Dedup
+Dataset composition
 
 | Source Type | Count | Share |
 |---|---:|---:|
