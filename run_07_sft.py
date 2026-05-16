@@ -1,24 +1,7 @@
 #!/usr/bin/env python3
 """
-run_07_sft.py
-
-LoRA/QLoRA SFT stage for the ATP curriculum pipeline.
-
-This script consumes verified trajectories assembled by run_06 and trains a
-DeepSeek-Prover-style student model with completion-only supervised fine-tuning.
-It does not mine, search, or call Lean proof search. It only builds a clean SFT
-corpus from verified proofs, optionally mixes in general Lean proof data, and
-trains PEFT adapters.
-
-Typical use:
-  python run_07_sft.py \
-    --run06-dir outputs/run_06_assemble_curriculum \
-    --general-lean-data data/general_lean_sft.jsonl \
-    --base-model deepseek-ai/DeepSeek-Prover-V1.5-SFT \
-    --output-dir outputs/run_07_sft_lora
-
-Dry run:
-  python run_07_sft.py --run06-dir outputs/run_06_assemble_curriculum --dry-run
+используем новые траектории из `run_06_assemble_curriculum.py`
+и обучаем base model в режиме completion-only LoRA SFT
 """
 
 from __future__ import annotations
