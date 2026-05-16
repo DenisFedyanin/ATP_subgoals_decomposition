@@ -155,14 +155,13 @@ theorem lean_workbook_plus_289 (a b c : ℝ) :
 ```
 
 
-#### 2.  Prefix fallback with adaptive rollouts:
+#### 2.  Prefix fallback:
  
 Example theorem: `lean_workbook_plus_140`
 
 when failed proof is mostly linear, does not contain a nested structure suitable for MCSP.
 
-then we extract a valid proof prefix: valid prefix + sorry. we sample suffix completions with adaptive rollout counts to estimate traj value:
-16 probe rollouts --> 32 main rollouts if promising
+then we extract a valid proof prefix: valid prefix + sorry.
 
 Lean theorem:
 ```lean
