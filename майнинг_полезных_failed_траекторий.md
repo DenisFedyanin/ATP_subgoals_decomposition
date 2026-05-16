@@ -1,6 +1,19 @@
 
 ### Майнинг полезных провальных траекторий
 
+| Category | ratio to total number of failed trajs |  |
+|---|---:|---|
+| MCSP candidate, structured | `32%` | Proof has `have`, `calc`, `show`, `constructor`, `cases`, `induction`, nested `by`, etc. |
+| Has compilable sorry skeleton | `16%` | Structured attempt yields at least one Lean-valid `sorry` skeleton. |
+| Solved MCSP holes later | `4%` | Hole search finds a verified replacement. |
+| Has valid prefix + sorry | `52%` | A linear/flat attempt has at least one prefix that compiles with appended `sorry`. |
+| Prefix rollout has useful signal | `24%` | Adaptive suffix rollouts show solves or strong partial progress. |
+| Solved prefix suffix later | `9%` | Prefix continuation search finds a verified suffix. |
+| No useful skeleton/prefix | `36%` | Failed attempt produces neither valid MCSP skeleton nor valid prefix job. |
+|
+
+
+
 #### 1. MCSP (Minimal clausal semi-proof) with Sorry-skeleton:
 
 Source script: `run_04_mine_failed_problems.py`  
