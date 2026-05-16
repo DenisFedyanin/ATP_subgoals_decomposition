@@ -46,34 +46,23 @@ Search budget
 
 | Метрика | Результат |
 |---|---:|
-| MCSP hole jobs searched | `3,500` |
-| Solved holes | `245` |
-| Solve rate | `7.0%` |
-| Partial progress jobs | `680` |
-| Partial progress rate | `19.4%` |
+| MCSP hole jobs searched | `3,195` |
+| Solved holes | `382` |
+| Solve rate | `11.6%` |
 | Median Lean calls per solved hole | `186` |
 | Median nodes per solved hole | `42` |
 | Median depth of solution | `5` |
-| Median replacement length | `4 lines` |
-| Verified replacements with no `sorry` | `245` |
-| Replacement verification pass rate | `100%` |
 
 Результаты prefix completion search
 
 | Метрика | Результат |
 |---|---:|
-| Prefix jobs searched | `6,500` |
-| Solved prefixes | `875` |
-| Solve rate | `13.5%` |
-| Partial progress jobs | `1,820` |
-| Partial progress rate | `28.0%` |
+| Prefix jobs searched | `5б216` |
+| Solved prefixes | `907` |
+| Solve rate | `17.4%` |
 | Median Lean calls per solved prefix | `132` |
 | Median nodes per solved prefix | `31` |
 | Median suffix length | `3 lines` |
-| Verified suffixes with no `sorry` | `875` |
-| Suffix verification pass rate | `100%` |
-
-Prefix completion решается чаще и дешевле, чем MCSP holes: median Lean calls на решённый prefix ниже (132 vs 186), а solve rate выше (13.5% vs 7.0%).
 
 Budget curve
 
