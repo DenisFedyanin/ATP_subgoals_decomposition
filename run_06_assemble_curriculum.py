@@ -1,40 +1,6 @@
 #!/usr/bin/env python3
 """
-run_06_assemble_curriculum.py
-
-Assemble verified proof trajectories from outputs of run_05_search_sorry_and_prefixes.py.
-
-This stage does NOT generate new proof text and does NOT run search. It only assembles,
-normalizes, optionally re-verifies, and exports clean curriculum trajectories.
-
-Inputs produced by run_05:
-  - solved_prefix_suffixes.jsonl
-      Verified suffixes found for selected prefixes.
-  - solved_hole_replacements.jsonl
-      Verified replacements found for individual MCSP/sorry holes.
-  - assembled_full_proofs.jsonl (optional)
-      Any full parent proofs already assembled by run_05.
-
-Outputs:
-  - final_trajectories.jsonl
-      Unified clean proof trajectories usable for SFT/RLVR/curriculum training.
-  - final_curriculum_items.jsonl
-      Training-oriented records with input/target fields.
-  - assembled_prefix_trajectories.jsonl
-      Prefix + searched suffix full proofs.
-  - assembled_mcsp_trajectories.jsonl
-      Semi-proof skeleton + all solved replacements full proofs.
-  - partial_mcsp_sketches.jsonl
-      Parent sketches with some holes filled but remaining `sorry`; not training positives.
-  - rejected_assemblies.jsonl
-      Assemblies skipped/rejected, with reasons.
-  - run_report.json
-      Aggregate assembly statistics.
-
-Important safety/correctness rule:
-  UNRESOLVED jobs and SOLVED_LOCAL_ONLY hole replacements are not used as positives by default.
-  A trajectory enters the final curriculum only if the assembled Lean code verifies and contains
-  no `sorry`/`admit` placeholders, unless explicitly overridden in config.
+Собираем verified proof trajectories из результатов run_05_search_sorry_and_prefixes.py.
 """
 
 from __future__ import annotations
