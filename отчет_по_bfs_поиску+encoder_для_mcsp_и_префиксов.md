@@ -63,16 +63,6 @@ Search budget
 | Median nodes per solved prefix | `31` |
 | Median suffix length | `3 lines` |
 
-Budget curve
-
-| Tactic-call budget | MCSP holes | Prefix jobs | Overall |
-|---|---:|---:|---:|
-| `128` | `3.0%` | `6.5%` | `5.3%` |
-| `256` | `4.8%` | `9.4%` | `7.8%` |
-| `512` | `6.2%` | `12.0%` | `10.0%` |
-| `1024` | `7.0%` | `13.5%` | `11.2%` |
-
-
 Search failure modes:
 
 | Failure reason | Count | Rate |
