@@ -1,7 +1,7 @@
 
 ### Майнинг полезных провальных траекторий
 
-#### 1. Run 04 MCSP / Sorry-Skeleton:
+#### 1. MCSP (Minimal clausal semi-proof) with Sorry-skeleton:
 
 Source script: `run_04_mine_failed_problems.py`  
 Dataset: `internlm/Lean-Workbook`,  [internlm/Lean-Workbook](https://huggingface.co/datasets/internlm/Lean-Workbook)
