@@ -3,8 +3,8 @@
 
 | Category | ratio to total number of failed trajs |  |
 |---|---:|---|
-| MCSP candidate, structured | `32%` | Proof has `have`, `calc`, `show`, `constructor`, `cases`, `induction`, nested `by`, etc. |
-| Has compilable sorry skeleton | `16%` | Structured attempt yields at least one Lean-valid `sorry` skeleton. |
+| MCSP candidate, structured | `32%` | proof has `have`, `calc`, `show`, `constructor`, `cases`, `induction`, nested `by`,  |
+| Has compilable sorry skeleton | `16%` | Lean-compiled `sorry` skeleton. |
 | Solved MCSP holes later | `4%` | Hole search finds a verified replacement. |
 | Has valid prefix + sorry | `52%` | A linear/flat attempt has at least one prefix that compiles with appended `sorry`. |
 | Prefix rollout has useful signal | `24%` | Adaptive suffix rollouts show solves or strong partial progress. |
