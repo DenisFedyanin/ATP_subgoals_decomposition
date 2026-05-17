@@ -1,44 +1,11 @@
-# Корректный референсный отчет по run_05: MCSP holes, prefix completion и sorry-заглушки
+# отчет по run_05: майнинг MCSP sorry-заглушки и prefix 
 
-Дата подготовки: 2026-05-17  
-Стадия: `run_05_search_sorry_and_prefixes.py`  
-Контекст пайплайна: `run_04_mine_failed_problems.py` -> `run_05_search_sorry_and_prefixes.py` -> `run_06_assemble_curriculum.py`
-
-> Этот документ является правильным референсным отчетом-шаблоном. Он фиксирует, какие сущности и метрики нужно считать, какие числа должны быть согласованы между собой, и где в итоговом отчете должны стоять графики/диаграммы.  
-> В текущем workspace фактический запуск `run_05` без дополнительных аргументов ожидаемо даст 0 jobs, потому что входные файлы `mcsp_search_jobs.jsonl` и `prefix_search_jobs.jsonl` отсутствуют.
-
-## 1. Executive summary
-
-`run_05` выполняет encoder-guided best-first tree search по двум типам задач:
+ encoder-guided best-first tree search выполнялся по двум типам задач:
 
 - `HOLE_FILLING`: замена одной целевой `sorry`-заглушки внутри MCSP/semi-proof каркаса.
 - `PREFIX_COMPLETION`: продолжение уже валидного proof prefix-а до полного Lean-доказательства.
 
-Ключевой вывод для корректного учета:
-
-- Prefix-задача и prefix-траектория почти совпадают концептуально, но текущий код может сохранить до 3 suffix solutions на один prefix job.
-- MCSP-задача заменяет одну target `sorry`, но один MCSP-каркас может содержать несколько `sorry`. Поэтому MCSP solution record не равен финальной trajectory.
-- Финальные обучающие траектории корректно считать после `run_06`, где prefix suffix-ы собираются в полные доказательства, а MCSP replacements группируются по каркасу и применяются вместе.
-
-[диаграмма: pipeline run_04 -> run_05 -> run_06 с двумя ветками: MCSP holes и prefix completion]
-
-## 2. Текущее состояние артефактов
-
-В текущем workspace найдены следующие важные факты:
-
-| Проверка | Статус |
-|---|---:|
-| `outputs/run_04_mine_failed_problems/mcsp_search_jobs.jsonl` | отсутствует |
-| `outputs/run_04_mine_failed_problems/prefix_search_jobs.jsonl` | отсутствует |
-| `outputs/run_05_search_sorry_and_prefixes/` | отсутствует |
-| `run_04` пишет `mcsp_holes.jsonl` | да, по коду |
-| `run_04` пишет `prefix_candidates.jsonl` | да, по коду |
-| `run_05` читает `mcsp_search_jobs.jsonl` | да, по коду |
-| `run_05` читает `prefix_search_jobs.jsonl` | да, по коду |
-
-Следствие: перед настоящим запуском нужно синхронизировать интерфейс `run_04 -> run_05`: либо переименовать/сконвертировать outputs `run_04`, либо изменить входные пути `run_05`.
-
-## 3. Конфигурация поиска run_05
+## Конфигурация поиска
 
 | Параметр | MCSP / `HOLE_FILLING` | Prefix / `PREFIX_COMPLETION` |
 |---|---:|---:|
