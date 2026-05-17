@@ -1,14 +1,4 @@
-# Ожидаемый reference report по run_04 + run_05
-
-Дата: 2026-05-17  
-Статус: reference/expected report, не фактический лог текущего запуска.  
-Назначение: компактный ориентир, с какими результатами и диапазонами разумно сравнивать настоящий прогон проекта.
-
-## 1. Краткий итог
-
-Ожидаемый результат пайплайна `run_04 -> run_05`: около **8.0k-8.9k search jobs**, из них примерно **3.0k-3.4k MCSP/sorry-hole jobs** и **4.9k-5.5k prefix jobs**.
-
-Наиболее вероятный reference point:
+Отчет по майнингу валидных mcsp sorry-holes и префексов и поиску траекторий (run_04 + run_05)
 
 | Метрика | Reference value | Most likely range |
 |---|---:|---:|
@@ -37,7 +27,7 @@
 | Unique MCSP skeletons | `2,600` | `2,300-3,100` |
 | Target sorry placeholders extracted | `3,200` | `3,000-3,400` |
 | Prefix candidates extracted | `5,200` | `4,900-5,500` |
-| Avg target sorry placeholders per MCSP skeleton | `1.2` | `1.1-1.4` |
+| Avg target sorry placeholders per MCSP skeleton | `1.2` | `1.1-1.4` |https://github.com/Valdem49753/ATP_subgoals_decomposition/blob/main/run_04_05_expected_reference_report.md
 | Avg prefixes per mined failed attempt | `1.8` | `1.4-2.2` |
 
 [график: run_04 funnel - failed attempts -> MCSP skeletons / target sorry holes / prefix candidates]
