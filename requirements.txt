@@ -1,0 +1,22 @@
+# Core
+torch>=2.1
+transformers>=4.40
+peft>=0.10
+datasets>=2.18
+accelerate>=0.29
+numpy>=1.24
+pandas>=2.0
+pyyaml>=6.0
+tqdm>=4.65
+
+# Lean 4 verification (requires the Lean toolchain: elan + lake)
+lean-dojo>=2.1
+
+# Fast generation for mining/search stages (run_04, run_05)
+vllm>=0.4
+
+# Optional: QLoRA (4-bit) training in run_07/run_08
+# bitsandbytes>=0.43
+
+# Optional: FlashAttention-2 for SFT/RL stages
+# flash-attn>=2.5 --no-build-isolation
